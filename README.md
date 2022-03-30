@@ -21,6 +21,6 @@
 
 * 디버깅 편리성을위해 `nodemon` 설치 `package.json` 에 `action` 등록
 * 명령을 `slash command` 로 변경하기 위해 `api` 활용해 등록
-	* `application.commands` 권한 봇에 추가
+	* `application.commands` 권한 봇에 추가 같은 봇일 경우 링크 생성하면 자동으로 서버에 등록된다 추후 배포시 권한 축소 필요
 	* 명령어 등록은 `deploy-commands.js`에
 	* 명령어 `actcion` 은 `app.js` 에 있다 추후 명령어 관리를 위해 `builder` 활용해 분리할 예정
