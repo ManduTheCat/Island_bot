@@ -2,9 +2,9 @@
 ## day1
 * [참조 공식 문서](https://discordjs.guide/#before-you-begin)
 * 봇은 로그인 되나 정상적으로 핑퐁 작동이 안됨
-	* 클라이언트 객체 생성 오류 discord 13 버넞으로 오면서 instents 를 사용해 권한을 부여해야 봇이 정상적으로 권한대로 행동함
+	* 클라이언트 객체 생성 오류 discord 13 으로 오면서 `instents` 를 사용해 권한을 부여해야 봇이 정상적으로 권한대로 행동함
 	* 다음과 같이 변경해 해결함
-	* discode13 버전 변경점
+	* `discorde13` 버전 변경점
 	```js
 	const client = new Client();
 	```
@@ -24,4 +24,4 @@
 * 명령을 `slash command` 로 변경하기 위해 `api` 활용해 등록
 	* `application.commands` 권한 봇에 추가 같은 봇일 경우 링크 생성하면 자동으로 서버에 등록된다 추후 배포시 권한 축소 필요
 	* 명령어 등록은 `deploy-commands.js`에
-	* 명령어 `actcion` 은 `app.js` 에 있다 추후 명령어 관리를 위해 `builder` 활용해 분리할 예정
+	* 명령어 `actcion` 은 `app.js` 에 있다 추후 명령어 관리를 위해 `@discord-builder` 활용해 분리할 예정
