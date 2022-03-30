@@ -2,7 +2,7 @@
 ## day1
 * [참조 공식 문서](https://discordjs.guide/#before-you-begin)
 * 봇은 로그인 되나 정상적으로 핑퐁 작동이 안됨
-	* 클라이언트 객체 생성 오류 discord 13 으로 오면서 `instents` 를 사용해 권한을 부여해야 봇이 정상적으로 권한대로 행동함
+	* 클라이언트 객체 생성 오류 `discord 13` 으로 오면서 `instents` 를 사용해 권한을 부여해야 봇이 정상적으로 권한대로 행동함
 	* 다음과 같이 변경해 해결함
 	* `discorde13` 버전 변경점
 	```js
