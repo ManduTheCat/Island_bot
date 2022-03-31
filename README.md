@@ -25,3 +25,7 @@
 	* `application.commands` 권한 봇에 추가 같은 봇일 경우 링크 생성하면 자동으로 서버에 등록된다 추후 배포시 권한 축소 필요
 	* 명령어 등록은 `deploy-commands.js`에
 	* 명령어 `actcion` 은 `app.js` 에 있다 추후 명령어 관리를 위해 `@discord-builder` 활용해 분리할 예정
+## day3
+* `api` 쓰려 햇는데 마침 점검중이고 하루걸린다 로아와 스크립트 해서 정보 얻어오는 방식으로 변경
+* `()=>{}` 와 `function () {}` 의 `this` 범위차이 꺠닳는데 1시간 걸림
+* `asynic` 함수`module.expor`t 는 `.then`을 통채로 넘기면 된다
