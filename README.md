@@ -27,5 +27,17 @@
 	* 명령어 `actcion` 은 `app.js` 에 있다 추후 명령어 관리를 위해 `@discord-builder` 활용해 분리할 예정
 ## day3
 * `api` 쓰려 햇는데 마침 점검중이고 하루걸린다 로아와 스크립트 해서 정보 얻어오는 방식으로 변경
-* `()=>{}` 와 `function () {}` 의 `this` 범위차이 꺠닳는데 1시간 걸림
+* `()=>{}` 와 `function () {}` 의 `this` 범위차이 꺠닿는데 1시간 걸림
 * `asynic` 함수`module.expor`t 는 `.then`을 통채로 넘기면 된다
+* 메시지 `embed` 형태로 개선 필요
+* ```js
+	.then(()=>{
+			console.log(res)
+			interaction.channel.send(res[0]||"None")
+			interaction.channel.send(res[1]||"None")
+			interaction.channel.send(res[2]||"None")
+		})
+	```
+
+	* 계속 빈문장입력해서 애러 라 했는데 실제로 출력 도 none 나오고
+	[stack overflow solution](https://stackoverflow.com/questions/53907056/how-to-fix-discordapierror-cannot-send-an-empty-message) 로해결
