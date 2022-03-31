@@ -5,9 +5,13 @@ const {clientId, guildId, token} = require('./config.json')
 
 // 명령어 json 으로 변환
 const commands = [
-	new SlashCommandBuilder().setName('ping').setDescription('say pong~')
-].map(command => command.toJSON())
-// rest api 객체 만들기 위해 token version 등록
+	new SlashCommandBuilder().setName('ping').setDescription('Replies with pong!'),
+	new SlashCommandBuilder().setName('server').setDescription('Replies with server info!'),
+	new SlashCommandBuilder().setName('user').setDescription('Replies with user info!'),
+	new SlashCommandBuilder().setName('오섬뭐').setDescription('오늘 모험섬 안내'),
+]
+	.map(command => command.toJSON());
+
 const rest = new REST({ version: '9' }).setToken(token);
 
 rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
