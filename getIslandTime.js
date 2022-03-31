@@ -17,6 +17,11 @@ const timeCal = (rowEndTime) => {
 	const miniutes = Math.floor((remainTime % (1000 * 60 * 60)) / (1000*60));
 	const seconds = Math.floor((remainTime % (1000 * 60)) / 1000);
 	remainHourTimeSec = hours + ":" +  miniutes + ":" + seconds;
+	if (remainTime < 0) {
+    // 시간이 종료 되었으면..
+	clearInterval(tid);   // 타이머 해제
+	}
+
 	return remainHourTimeSec;
 }
 
@@ -28,6 +33,11 @@ getHtml()
 		const apearTime = $timeBodyList.attr("data-countdown").split(" ");
 		const remainTime = timeCal($timeBodyList.attr("data-countdown"));
 
-
+		islandTime={
+			date : apearTime[0],
+			startTime : apearTime[1],
+			remainTime : remainTime
+		}
+		console.log(islandTime);
 	});
 

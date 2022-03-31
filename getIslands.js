@@ -1,6 +1,5 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const log = console.log;
 
 const getHtml = async () =>{
 	try{
@@ -11,9 +10,9 @@ const getHtml = async () =>{
 	}
 };
 
-getHtml()
+module.exports = getHtml()
 	.then(html =>{
-		let islandList = [];
+		let islandList =[];
 		const $ = cheerio.load(html.data);
 		const $bodyList = $("ul.today-quest-list").children("li.list");
 		$bodyList.each(function(i, el) {
@@ -24,5 +23,7 @@ getHtml()
 				returnImgUrl : $(this).find("figure img:nth-child(2)").attr("src")
 			};
 		});
+
+		return islandList.filter(n => n.title);
 	});
 
