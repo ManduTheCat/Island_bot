@@ -8,7 +8,7 @@ client.once('ready',()=>{
 	console.log(`ready ${client.user.tag}`)
 	const data = island;
 	data.then((el)=>{
-		el.forEach(element => {console.log(element.title)})
+		el.forEach(islandData => {console.log(islandData.title)})
 	})
 })
 client.on('interactionCreate', async interaction =>{
