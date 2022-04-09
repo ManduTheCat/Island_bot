@@ -42,7 +42,7 @@
 	* 계속 빈문장입력해서 애러 라 했는데 실제로 출력 도 none 나오고
 	[stack overflow solution](https://stackoverflow.com/questions/53907056/how-to-fix-discordapierror-cannot-send-an-empty-message) 로해결
 ## day4
-* null 문제 `JOSON stringify` 로 해결
+* null 문제 + 지속적으로 메시지 실패 애러 발생 `JOSON stringify` 로 해결
 ```js
 	} else if(commandName === '오섬뭐'){
 		let data = null
