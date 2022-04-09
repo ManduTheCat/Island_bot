@@ -2,7 +2,7 @@ const { Client, Intents, MessageSelectMenu } = require('discord.js');
 const {token} = require('./config.json');
 const client = new Client({intents:[Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
 
-const island = require('./getIslands');
+const island = require('./getIslandInfo/getIslands');
 
 client.once('ready',()=>{
 	console.log(`ready ${client.user.tag}`)
