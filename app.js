@@ -19,23 +19,14 @@ client.on('interactionCreate', async interaction =>{
 	} else if (commandName === 'user') {
 		await interaction.reply(`유저이름 : ${interaction.user.username}`);
 	} else if(commandName === '오섬뭐'){
-		const data = island;
-		let res = []
-		data.then((el)=>{el.forEach((islandData)=>{
-			res.push(islandData.title)
-			// console.log(islandData.title)
-
-			})
+		let data = null
+		island.then((el)=>{
+			data = el
 		}).then(()=>{
-			console.log(res)
-			//이거 왜됨?
-
-			interaction.channel.send(res[0]||"None")
-			interaction.channel.send(res[1]||"None")
-			interaction.channel.send(res[2]||"None")
+			interaction.reply(JSON.stringify(data[0].title))
 		})
-
 	}
+
 });
 
 client.login(token);
