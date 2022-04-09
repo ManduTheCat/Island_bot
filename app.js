@@ -23,7 +23,7 @@ client.on('interactionCreate', async interaction =>{
 		island.then((el)=>{
 			data = el
 		}).then(()=>{
-			interaction.reply(JSON.stringify(data[0].title))
+			interaction.reply(JSON.stringify(data[0].title)+"\n"+JSON.stringify(data[1].title)+"\n"+JSON.stringify(data[2].title))
 		})
 	}
 
