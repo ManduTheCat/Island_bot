@@ -41,3 +41,24 @@
 
 	* 계속 빈문장입력해서 애러 라 했는데 실제로 출력 도 none 나오고
 	[stack overflow solution](https://stackoverflow.com/questions/53907056/how-to-fix-discordapierror-cannot-send-an-empty-message) 로해결
+## day4
+* null 문제 `JOSON stringify` 로 해결
+```js
+	} else if(commandName === '오섬뭐'){
+		let data = null
+		island.then((el)=>{
+			data = el
+		}).then(()=>{
+			interaction.reply(JSON.stringify(data[0].title)+"\n"+JSON.stringify(data[1].title)+"\n"+JSON.stringify(data[2].title))
+		})
+	}
+```
+* 다중 서버  /명령어 등록을 위해 config.js guildID-> gildIDs 리스트 로 변경, deploy-commands.js 에서 guildIds 를 map 으로 리스트 파싱
+* 글로벌 배포를 하려면 [글로벌 서버 배포 문서](https://discordjs.guide/interactions/slash-commands.html#global-commands)
+* 글로벌은 1시간 걸린다 `Global commands are cached for one hour. New global commands will fan out slowly across all guilds and will only be guaranteed to be updated after an hour. Guild commands update instantly. As such, we recommend you use guild-based commands during development and publish them to global commands when they're ready for public use.`
+```js
+await rest.put(
+	Routes.application(clientId),
+		{body:commands}
+)
+```
