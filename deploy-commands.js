@@ -1,7 +1,7 @@
 const {SlashCommandBuilder} = require('@discordjs/builders')
 const {REST} = require('@discordjs/rest');
 const {Routes} = require('discord-api-types/v9');
-const {clientId, guildId, token} = require('./config.json')
+const {clientId, guildIds, token} = require('./config.json')
 
 // 명령어 json 으로 변환
 const commands = [
@@ -14,6 +14,16 @@ const commands = [
 
 const rest = new REST({ version: '9' }).setToken(token);
 
-rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
-	.then(() => console.log('Successfully registered application commands.'))
-	.catch(console.error);
+//즉시실행 함수로 then catch  필요 없게 된다. await 으로 묶을땐 try 로 묶어야한다
+(async ()=>{
+	guildIds.map(async(guildId)=>{
+		try{
+			await rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands });
+			console.log(`${guildId}dicsord api 에 슬래쉬 명령어 등록 성공`)
+		}
+		catch(error){
+			console.error(error);
+		}
+	});
+})();
+
