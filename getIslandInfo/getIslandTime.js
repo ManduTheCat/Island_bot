@@ -25,7 +25,7 @@ const timeCal = (rowEndTime) => {
 	return remainHourTimeSec;
 }
 
-getHtml()
+module.exports = getHtml()
 	.then(html =>{
 		let islandTime =[];
 		const $ = cheerio.load(html.data);
@@ -38,6 +38,6 @@ getHtml()
 			startTime : apearTime[1],
 			remainTime : remainTime
 		}
-		console.log(islandTime);
+		return islandTime
 	});
 
