@@ -30,8 +30,7 @@ client.on('interactionCreate', async interaction =>{
 				{name:"첫번째 섬",value:String(JSON.stringify(data[0].title)), inline:true},
 				{name:"두번째 섬",value:String(JSON.stringify(data[1].title)),inline:true},
 				{name:"세번째 섬",value:String(JSON.stringify(data[2].title)),inline:true}
-				)
-
+			)
 			interaction.reply({embeds:[exampleEmbed]})
 		})
 	}
