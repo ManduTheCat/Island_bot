@@ -28,7 +28,6 @@ client.on('interactionCreate', async interaction =>{
 			island.then((el)=>{
 				IslandNameData = el
 			}).then(()=>{
-				console.log(IslandTimeData)
 				const exampleEmbed = new MessageEmbed()
 				.setTitle("오늘의 모험 섬")
 				.addFields(
