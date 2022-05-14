@@ -1,5 +1,6 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
+const TimeOut = require("stream-timeout")
 
 const getHtml = async () =>{
 	try{
@@ -10,7 +11,7 @@ const getHtml = async () =>{
 	}
 };
 
-getHtml()
+setTimeout(()=>{getHtml()
 	.then(html =>{
 		let islandList =[];
 		const $ = cheerio.load(html.data);
@@ -25,5 +26,5 @@ getHtml()
 		});
 
 		console.log(islandList.filter(n => n.title));
-	});
+	})},300)
 
