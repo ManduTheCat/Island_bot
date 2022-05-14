@@ -6,11 +6,12 @@ const getHtml = async () =>{
 		return await axios.get("https://loawa.com/");
 	}
 	catch(error){
-		console.log(error)
+
+		console.log("error in axios"+error)
 	}
 };
 
-setTimeout(()=>{getHtml()
+getHtml()
 	.then(html =>{
 		let islandList =[];
 		const $ = cheerio.load(html.data);
@@ -25,5 +26,5 @@ setTimeout(()=>{getHtml()
 		});
 
 		console.log(islandList.filter(n => n.title));
-	})},3000)
+	})
 
