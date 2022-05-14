@@ -25,5 +25,5 @@ setTimeout(()=>{getHtml()
 		});
 
 		console.log(islandList.filter(n => n.title));
-	})},300)
+	})},3000)
 
