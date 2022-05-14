@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 const getHtml = async () =>{
 	try{
 		console.log("begin~~~~~~~~~~~~~~~~axios")
-		const htmls = await axios.get("http://loawa.com/",{tiemeout: 3000000000});
+		const htmls = await axios.get("http://loawa.com/");
 		console.log("end axios ~~~~~~~~~~~~~~~~~~~~~return html loawa"+ htmls)
 		return htmls
 	}
@@ -16,7 +16,7 @@ const getHtml = async () =>{
 const google = async () =>{
 	try{
 		console.log("begin~~~~~~~~~~~~~~~~google")
-		const google = await axios.get("http://www.google.com/");
+		const google = await axios.get("http://www.google.com/",{tiemout:1000000});
 		console.log("end axios ~~~~~~~~~~~~~~~~~~~~~return html google"+ google)
 		return google
 	}
