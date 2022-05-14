@@ -3,8 +3,9 @@ const cheerio = require("cheerio");
 
 const getHtml = async () =>{
 	try{
+		console.log("begin~~~~~~~~~~~~~~~~axios")
 		const htmls = await axios.get("https://loawa.com/");
-		console.log("return html"+ htmls)
+		console.log("end axios ~~~~~~~~~~~~~~~~~~~~~return html"+ htmls)
 		return htmls
 	}
 	catch(error){
