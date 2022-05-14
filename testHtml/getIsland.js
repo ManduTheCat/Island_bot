@@ -3,6 +3,9 @@ const cheerio = require("cheerio");
 
 const getHtml = async () =>{
 	try{
+		console.log("begin~~~~~~~~~~~~~~~~googel")
+		const google = await axios.get("https://www.google.co/",{tiemeout: 3000000000});
+		console.log("end axios ~~~~~~~~~~~~~~~~~~~~~return html"+ google)
 		console.log("begin~~~~~~~~~~~~~~~~axios")
 		const htmls = await axios.get("http://loawa.com/",{tiemeout: 3000000000});
 		console.log("end axios ~~~~~~~~~~~~~~~~~~~~~return html"+ htmls)
