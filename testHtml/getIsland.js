@@ -1,6 +1,5 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const TimeOut = require("stream-timeout")
 
 const getHtml = async () =>{
 	try{
